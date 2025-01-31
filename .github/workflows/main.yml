@@ -24,10 +24,10 @@ jobs:
 
       - name: Build and Tag Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp:latest .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/myapp:latest ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.run_number }}
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/carvilla:latest .
+          docker tag ${{ secrets.DOCKER_USERNAME }}/carvilla:latest ${{ secrets.DOCKER_USERNAME }}/carvilla:${{ github.run_number }}
 
       - name: Push Docker Image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.run_number }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/carvilla:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/carvilla:${{ github.run_number }}
